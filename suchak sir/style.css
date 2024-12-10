@@ -1,0 +1,558 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+    background-color: #2e6c37;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: relative;
+}
+
+header .logo {
+    width: 40px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #ffd700;
+}
+
+.menu-toggle {
+    display: none;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 1001; /* Ensures button is on top */
+}
+
+/* Hero Section Styling */
+.hero {
+    text-align: center;
+    padding: 40px;
+    background-color: #f5f5f5;
+}
+
+.hero img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 2rem;
+    color: #2e6c37;
+}
+
+.hero p {
+    margin: 10px 0;
+}
+
+/* Content Section Styling */
+.content-section {
+    padding: 20px;
+    background-color: #e2f1e1; /* Light background color */
+}
+
+.content-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2e6c37;
+}
+
+/* Property Section */
+.property {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.property-slider {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    overflow-x: scroll; /* Enables horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Smooth scrolling for images */
+    gap: 10px;
+}
+
+.property-slider img {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    scroll-snap-align: start; /* Snap alignment for images */
+}
+
+.property-info {
+    flex: 1;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+/* Property Info - Unordered List Styling */
+.property-info ul {
+    list-style-type: disc; /* Ensures the list has bullet points */
+    padding-left: 20px; /* Adds space for bullet points */
+}
+
+.property-info ul li {
+    margin: 10px 0;
+    color: #333; /* Adjust color to ensure visibility */
+    font-size: 1rem;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #2e6c37;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    flex: 1;
+    text-align: left;
+}
+
+.footer-logo img {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+.footer-links, .footer-social, .footer-subscribe {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-links ul, .footer-social ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.footer-links a, .footer-social a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+}
+
+.footer-links a:hover, .footer-social a:hover {
+    text-decoration: underline;
+}
+
+.footer-subscribe form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-subscribe input {
+    padding: 10px;
+    border: none;
+    width: 70%;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.footer-subscribe button {
+    padding: 10px 20px;
+    background-color: #ffd700;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.footer-subscribe button:hover {
+    background-color: #d4a700;
+}
+
+/* Responsive Design for Footer */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .footer-logo, .footer-links, .footer-social, .footer-subscribe {
+        flex: none;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .footer-subscribe form {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-subscribe input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .footer-subscribe button {
+        width: 100%;
+    }
+}
+
+/* Responsive Design for Navigation */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show toggle button on smaller screens */
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #2e6c37;
+        width: 200px;
+        flex-direction: column;
+        display: none;
+        padding: 10px;
+        border-radius: 0 0 5px 5px;
+    }
+
+    .nav-menu.active {
+        display: flex; /* Show menu when active */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-menu a {
+        padding: 10px;
+        border-bottom: 1px solid #ffffff33;
+        text-align: left;
+    }
+
+    .nav-menu a:last-child {
+        border-bottom: none;
+    }
+}
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+    background-color: #2e6c37;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: relative;
+}
+
+header .logo {
+    width: 40px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #ffd700;
+}
+
+.menu-toggle {
+    display: none;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 1001; /* Ensures button is on top */
+}
+
+/* Hero Section Styling */
+.hero {
+    text-align: center;
+    padding: 40px;
+    background-color: #f5f5f5;
+}
+
+.hero img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 2rem;
+    color: #2e6c37;
+}
+
+.hero p {
+    margin: 10px 0;
+}
+
+/* Content Section Styling */
+.content-section {
+    padding: 20px;
+    background-color: #e2f1e1; /* Light background color */
+}
+
+.content-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2e6c37;
+}
+
+/* Property Section */
+.property {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.property-slider {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    overflow-x: scroll; /* Enables horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Smooth scrolling for images */
+    gap: 10px;
+}
+
+.property-slider img {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    scroll-snap-align: start; /* Snap alignment for images */
+}
+
+.property-info {
+    flex: 1;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+/* Property Info - Unordered List Styling */
+.property-info ul {
+    list-style-type: disc; /* Ensures the list has bullet points */
+    padding-left: 20px; /* Adds space for bullet points */
+}
+
+.property-info ul li {
+    margin: 10px 0;
+    color: #333; /* Adjust color to ensure visibility */
+    font-size: 1rem;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #2e6c37;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    flex: 1;
+    text-align: left;
+}
+
+.footer-logo img {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+.footer-links, .footer-social, .footer-subscribe {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-links ul, .footer-social ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.footer-links a, .footer-social a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+}
+
+.footer-links a:hover, .footer-social a:hover {
+    text-decoration: underline;
+}
+
+.footer-subscribe form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-subscribe input {
+    padding: 10px;
+    border: none;
+    width: 70%;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.footer-subscribe button {
+    padding: 10px 20px;
+    background-color: #ffd700;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.footer-subscribe button:hover {
+    background-color: #d4a700;
+}
+
+/* Responsive Design for Footer */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .footer-logo, .footer-links, .footer-social, .footer-subscribe {
+        flex: none;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .footer-subscribe form {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-subscribe input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .footer-subscribe button {
+        width: 100%;
+    }
+}
+
+/* Responsive Design for Navigation */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show toggle button on smaller screens */
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #2e6c37;
+        width: 200px;
+        flex-direction: column;
+        display: none;
+        padding: 10px;
+        border-radius: 0 0 5px 5px;
+    }
+
+    .nav-menu.active {
+        display: flex; /* Show menu when active */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-menu a {
+        padding: 10px;
+        border-bottom: 1px solid #ffffff33;
+        text-align: left;
+    }
+
+    .nav-menu a:last-child {
+        border-bottom: none;
+    }
+
+    /* Property Section for Small Screens */
+    .property {
+        flex-direction: column;
+    }
+
+    .property-slider {
+        width: 100%;
+        max-width: none;
+        overflow-x: scroll; /* Allows horizontal scroll for images */
+    }
+
+    .property-info {
+        width: 100%;
+        order: 1; /* Moves the property-info div below the image */
+        margin-top: 20px;
+    }
+}
+
+
